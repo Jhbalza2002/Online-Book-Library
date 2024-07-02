@@ -1,5 +1,5 @@
 
-/* Container for the Account section */
+
 .AccountDetailsMain {
     width: 60%;
     margin: 50px auto;
@@ -22,14 +22,14 @@
     color: #000000;
   }
   
-  /* Paragraph styles */
+
   .Fname, .Lname, .Email, .Nobookcheck {
     font-size: 1.1em;
     color: #444;
     margin: 10px 0;
   }
   
-  /* List styles */
+
   .Ulist {
     list-style-type: none;
     padding: 0;
@@ -75,10 +75,9 @@
 .ImageAccount{
     height: 250px;
     width: 200px;
-    margin left: 50px;
 }
 
-  /* Loading and error messages */
+  
   div {
     text-align: center;
   }

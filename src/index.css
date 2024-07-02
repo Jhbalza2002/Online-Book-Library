@@ -10,11 +10,6 @@ body {
   margin-right: 10px;
 }
 
-/* Add your own custom styles here */
-
-
-
-/* General Container */
 .container {
   width: 80%;
   margin: 2rem auto;
@@ -24,13 +19,11 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Heading Styles */
 h1, h2 {
   color: #333;
   margin-bottom: 1rem;
 }
 
-/* Form Styles */
 form {
   display: flex;
   flex-direction: column;
@@ -56,7 +49,6 @@ button:hover {
   background-color: #555;
 }
 
-/* List Styles */
 .account-details {
   margin-top: 1rem;
 }
