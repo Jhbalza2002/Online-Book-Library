@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useGetAccountDetailsQuery, useReturnBookMutation } from "./AccountSlice";
 import { useNavigate } from "react-router-dom";
-
+import "./Account.css"
 const Account = () => {
   const {
     data: accountDetails,
@@ -47,26 +47,32 @@ const Account = () => {
   }
 
   return (
-    <section>
-      <h2>Account Details</h2>
-      <p>First name: {accountDetails.firstname ?? "N/A"}</p>
-      <p>Last name: {accountDetails.lastname ?? "N/A"}</p>
-      <p>Email: {accountDetails.email ?? "N/A"}</p>
-      <h3>Checked Out Books</h3>
+    <section className="AccountDetailsMain">
+      <h2 className="AccountDetails">Account Details</h2>
+      <p className="Email"><strong>Email:</strong> {accountDetails.email ?? "N/A"}</p>
+      <p className="Fname"><strong>First name:</strong> {accountDetails.firstname ?? "N/A"}</p>
+      <p className="Lname"><strong>Last name:</strong> {accountDetails.lastname ?? "N/A"}</p>
+      <h3 className="CheckBooks">Checked Out Books</h3>
       {accountDetails.books?.length > 0 ? (
-        <ul>
+        <ul className="Ulist">
           {accountDetails.books.map((book) => (
-            <li key={book.id}>
-              <div>
-              {book.title} 
-            <br></br>
-            <button onClick={() => handleReturnBook(book.id)}>Return Book</button>
+            <li className="List" key={book.id}>
+              <div className="Returnablebooks">
+              <img
+            className="ImageAccount"
+            src={book.coverimage}
+            alt={`${book.title} cover`}
+          />
+              <strong>Author:</strong> {book.title} 
+            <br>
+            </br>
+            <button className="Return" onClick={() => handleReturnBook(book.id)}>Return Book</button>
               </div>
             </li>
           ))}
         </ul>
       ) : (
-        <p>No books checked out</p>
+        <p className="Nobookcheck">No books checked out</p>
       )}
     </section>
   );
