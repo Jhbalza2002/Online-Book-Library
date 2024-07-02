@@ -1,7 +1,8 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useGetAccountDetailsQuery, useReturnBookMutation } from "./AccountSlice";
 import { useNavigate } from "react-router-dom";
-import "./Account.css"
+import "./Account.css";
+
 const Account = () => {
   const {
     data: accountDetails,
@@ -11,12 +12,12 @@ const Account = () => {
     refetch
   } = useGetAccountDetailsQuery({ count: 4 });
 
-  useEffect(() => {
-    refetch()
-  },[isSuccess])
-
-  const [returnBook] = useReturnBookMutation();
   const navigate = useNavigate();
+  const [returnBook] = useReturnBookMutation();
+
+  useEffect(() => {
+    refetch();
+  }, [isSuccess]);
 
   const handleReturnBook = async (reservationId) => {
     try {
@@ -28,19 +29,26 @@ const Account = () => {
       console.error("Failed to return the book:", error);
       alert("Failed to return the book. Please try again.");
     }
-    window.location.reload ()
   };
+
+  useEffect(() => {
+    const token = localStorage.getItem("token") || sessionStorage.getItem("Token");
+    if (!token) {
+      navigate("/login");
+    }
+  }, [navigate]);
 
   if (isLoading) {
     return <div>Loading...</div>;
   }
 
   if (error) {
-    const token = window.sessionStorage.getItem("Token");
+    const token = localStorage.getItem("token") || sessionStorage.getItem("Token");
     if (!token) {
       navigate("/login");
       return <div>Redirecting to login...</div>;
-    }}
+    }
+  }
 
   if (!accountDetails) {
     return <div>No account details found.</div>;
@@ -58,15 +66,14 @@ const Account = () => {
           {accountDetails.books.map((book) => (
             <li className="List" key={book.id}>
               <div className="Returnablebooks">
-              <img
-            className="ImageAccount"
-            src={book.coverimage}
-            alt={`${book.title} cover`}
-          />
-              <strong>Author:</strong> {book.title} 
-            <br>
-            </br>
-            <button className="Return" onClick={() => handleReturnBook(book.id)}>Return Book</button>
+                <img
+                  className="ImageAccount"
+                  src={book.coverimage}
+                  alt={`${book.title} cover`}
+                />
+                <strong>Author:</strong> {book.title}
+                <br />
+                <button className="Return" onClick={() => handleReturnBook(book.id)}>Return Book</button>
               </div>
             </li>
           ))}
