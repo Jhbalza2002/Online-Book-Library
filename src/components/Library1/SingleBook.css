@@ -1,0 +1,66 @@
+.SingleBookContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 100px;
+}
+.LeftPage {
+  height: 500px;
+  width: 380px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 8px solid #333;
+  border-top: 8px solid #333;
+  border-bottom: 8px solid #333;
+  margin-right: -4px;
+  box-shadow: -4px 0 2px rgba(0, 0, 0, 0.308); 
+}
+
+.RightPage {
+  height: 500px;
+  width: 380px;
+  background-color: #f5deb3;
+  border-radius: 8px;
+  flex-direction: row;
+  border-right: 8px solid #333;
+  border-top: 8px solid #333;
+  border-bottom: 8px solid #333;
+  box-shadow: -4px 0 2px rgba(0, 0, 0, 0.308);
+}
+
+.SingleCoverImage {
+  height: 500px;
+  width: 380px;
+  margin: 10px auto;
+  display: block;
+}
+
+.SingleBookButtons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.CheckOutButton {
+}
+
+.BackButton {
+}
+
+.SingleBookAuthor {
+  text-align: center;
+}
+
+.SingleBookTitle {
+  text-align: center;
+}
+.SingleBookDescription {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.SingleBookDescriptionTitle {
+  margin-left: 10px;
+}

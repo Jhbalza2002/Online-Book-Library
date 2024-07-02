@@ -1,0 +1,41 @@
+nav {
+    background-color: #4b0c0c;
+    padding: 1px;
+    box-shadow: 0 4px 8px rgba(59, 56, 56, 0.1);
+  }
+  
+  ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 10;
+    margin-left: 10px;
+  }
+  
+  nav a {
+    color: #fff;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    
+  }
+  
+  .Links{
+    margin: 0.5rem 0;
+    padding: 0.75rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    padding-right: 100px;
+  }
+  
+ .Links:hover {
+    background-color: #6b1313;
+  }
+  
+  li a {
+    color:#4b0c0c;
+    font-weight: bold;
+  }
+
+  .Headers{
+    color:#fff
+  }
