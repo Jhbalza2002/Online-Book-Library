@@ -1,14 +1,19 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { clearTokens } from "./LogoutSlice";
 
-export default function LogOut() {
+const LogOut = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    clearTokens();
     window.sessionStorage.removeItem("Token");
     localStorage.removeItem("token");
     navigate("/login");
+    
   }, [navigate]);
 
-  return <div>Logging out...</div>; 
-}
+  return <div>Logging out...</div>;
+};
+
+export default LogOut;

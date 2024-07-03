@@ -16,6 +16,13 @@ export default function SingleBook() {
   const [checkoutBook] = useBookCheckoutMutation();
 
   const handleCheckout = async () => {
+    const token = localStorage.getItem("token") || sessionStorage.getItem("Token");
+    if (!token) {
+      alert("Please log in to check out the book.");
+      navigate("/login");
+      return;
+    }
+    
     try {
       await checkoutBook(id).unwrap();
       alert("Book checked out successfully!");
