@@ -1,83 +1,108 @@
-
-
 .AccountDetailsMain {
-    width: 60%;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border: 5px solid rgba(174, 123, 17, 1);
-  }
-  
-  .AccountDetails{
-    font-size: 2em;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  .CheckBooks {
-    font-size: 1.5em;
-    margin-top: 30px;
-    color: #000000;
-  }
-  
-
-  .Fname, .Lname, .Email, .Nobookcheck {
-    font-size: 1.1em;
-    color: #444;
-    margin: 10px 0;
-  }
-  
-
-  .Ulist {
-    list-style-type: none;
-    padding: 0;
-    flex-direction: column;
-  }
-  
-  .List {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    margin: 10px 0;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
-  
-  .Returnablebooks {
-    display: flex;
-    justify-content: space-between; 
-    align-items: center;
-    width: 90%;
-  }
-  
-  button.Return {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  button.Return:hover {
-    background-color: #0056b3;
-  }
-  
-  button.Return:focus {
-    outline: none;
-  }
-  
-.ImageAccount{
-    height: 250px;
-    width: 200px;
+  width: 60%;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #5c0000;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 5px solid rgba(174, 123, 17, 1);
 }
 
-  
-  div {
-    text-align: center;
-  }
+.AccountDetails {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.CheckBooks {
+  font-size: 1.5em;
+  margin-top: 30px;
+  color: #ffffff;
+}
+
+.Fname,
+.Lname,
+.Email,
+.Nobookcheck {
+  font-size: 1.1em;
+  color: #ffffff;
+  margin: 10px 0;
+}
+
+.Containers {
+  list-style-type: none;
+  padding: 0;
+  flex-direction: column;
+}
+
+.Books-Account {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #00000080;
+  border: 2px solid rgba(174, 123, 17, 1);
+  border-radius: 5px;
+  height: 250px;
+}
+
+.Returnablebooks {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+}
+
+button.Return {
+  font-weight: bold;
+  height: 270px;
+  width: 200px;
+  background-color: rgba(174, 123, 17, 1);
+  color: white;
+  border: none;
+  margin-right: -121px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button.Return:hover {
+  box-shadow: 0 0 15px 5px rgba(255, 174, 55, 0.75);
+}
+
+button.Return:focus {
+  outline: none;
+}
+
+.ImageAccount {
+  margin-left: 20px;
+  height: 250px;
+  width: 200px;
+  height: 200px;
+  width: 150px;
+  border: 5px solid #333;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.AccountDetailsMain {
+  text-align: center;
+}
+
+.BookInfo {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.Tittle,
+.Author {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 400px; 
+  margin-left: -150px;
+  padding: 20px;
+}

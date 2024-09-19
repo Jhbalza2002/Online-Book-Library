@@ -1,41 +1,109 @@
 nav {
-    background-color: #4b0c0c;
-    padding: 1px;
-    box-shadow: 0 4px 8px rgba(59, 56, 56, 0.1);
-  }
-  
-  ul {
-    display: flex;
-    justify-content: center;
-    list-style-type: none;
-    padding: 10;
-    margin-left: 10px;
-  }
-  
-  nav a {
-    color: #fff;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-    
-  }
-  
-  .Links{
-    margin: 0.5rem 0;
-    padding: 0.75rem;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-    padding-right: 100px;
-  }
-  
- .Links:hover {
-    background-color: #6b1313;
-  }
-  
-  li a {
-    color:#4b0c0c;
-    font-weight: bold;
+  background-color: #5c0000;
+  padding: 1px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  border-bottom: 3px solid #B8860B;
+  padding: 20px 100px;
+}
+
+.Links {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1; 
+}
+
+.Headers {
+  color: #ffffff;
+  font-family: 'Times New Roman', serif;
+  font-size: 2rem;
+  transition: text-shadow 0.3s ease, color 0.3s ease;
+}
+
+h1.Headers:hover {
+  text-shadow: 3px 3px 15px rgba(255, 255, 255, 0.75), 0px 0px 10px rgba(255, 255, 255, 0.8);
+  color: #ffffff;
+}
+
+h1.Headers:focus {
+  text-shadow: 3px 3px 15px rgba(255, 255, 255, 0.75), 0px 0px 10px rgba(255, 255, 255, 0.8);
+  color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+.Logo-Nav {
+  height: 90px;
+  width: 150px;
+}
+
+/* Original styles remain unchanged */
+
+/* Responsive Design Enhancements */
+@media (max-width: 1024px) {
+  nav {
+    padding: 20px 50px; /* Reduce padding on smaller screens */
   }
 
-  .Headers{
-    color:#fff
+  .Links {
+    flex-wrap: wrap; /* Allow the links to wrap on smaller screens */
+    justify-content: space-around; /* Adjust spacing for smaller viewports */
   }
+
+  .Headers {
+    font-size: 1.8rem; /* Reduce font size for smaller screens */
+  }
+
+  .Logo-Nav {
+    height: 70px; /* Reduce logo size */
+    width: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .Links {
+    padding: 10px 0;
+  }
+
+  .Headers {
+    font-size: 1.5rem; /* Further reduce font size for smaller devices */
+    margin-bottom: 10px;
+  }
+
+  .Logo-Nav {
+    height: 60px; /* Smaller logo for mobile */
+    width: 100px;
+    margin-bottom: 20px;
+  }
+
+  .Logo-Nav{
+    margin-top: 20px;
+  }
+  
+}
+
+@media (max-width: 480px) {
+  .Links {
+    padding: 5px; /* Adjust padding for mobile devices */
+  }
+
+  .Headers {
+    font-size: 1.3rem; /* Even smaller font size for smaller screens */
+  }
+
+  .Logo-Nav {
+    height: 50px; /* Smallest logo size */
+    width: 80px;
+  }
+}
+

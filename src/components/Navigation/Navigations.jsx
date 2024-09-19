@@ -1,6 +1,7 @@
-import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.css";
+import Logo from "../../assets/logo-library.png"
+
 const Navigation = () => {
   const navigate = useNavigate();
   const token =
@@ -8,40 +9,38 @@ const Navigation = () => {
 
   return (
     <nav>
-      <ul>
-        <li className="Links">
+       <img src={Logo} alt="Logo" className="Logo-Nav"/>
+        <div className="Links">
           <Link to="/books">
             <h1 className="Headers">Home</h1>
           </Link>
-        </li>
-        <li className="Links">
+        </div>
+        <div className="Links">
           <Link to="/account">
             <h1 className="Headers">Account</h1>
           </Link>
-        </li>
+        </div>
         {!token && (
           <>
-            <li className="Links">
+            <div className="Links">
               <Link to="/login">
                 <h1 className="Headers">Login</h1>
               </Link>
-            </li>
-            <li className="Links">
+            </div>
+            <div className="Links">
               <Link to="/register">
                 <h1 className="Headers">Register</h1>
               </Link>
-            </li>
+            </div>
           </>
         )}
         {token && (
-          <li className="Links">
+          <div className="Links">
             <Link to="/logout">
               <h1 className="Headers">LogOut</h1>
             </Link>
-          </li>
+          </div>
         )}
-        <li></li>
-      </ul>
     </nav>
   );
 };

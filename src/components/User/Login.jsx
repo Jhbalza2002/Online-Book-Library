@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLoginMutation } from "./LoginSlice";
-import "./Form.css"
+import "./Login.css";
+import Logo from "../../assets/Log-Register-img.jpg"
 
 export default function Login() {
   const [loginUser] = useLoginMutation();
@@ -32,33 +33,42 @@ export default function Login() {
   };
 
   return (
-    <div>
-      <form onSubmit={submit}>
-        <div className="form-group">
-          <label>Email address</label>
-          <input
-            type="email"
-            className="form-control"
-            aria-describedby="emailHelp"
-            placeholder="Enter email"
-            name="email"
-            onChange={updateForm}
-          />
-        </div>
-        <div className="form-group">
-          <label>Password</label>
-          <input
-            type="password"
-            className="form-control"
-            placeholder="Password"
-            name="password"
-            onChange={updateForm}
-          />
-        </div>
-        <button type="submit" className="btn btn-primary">
-          Submit
-        </button>
-      </form>
+    <div className="Login-MainContainer">
+      <div className="Login-left-Panel">
+        <form className="Login-form" onSubmit={submit}>
+        <h1 className="Log-welcome-message">Welcome Back! <br></br>Log In to Access Your Account</h1>
+          <div className="Login-form-group">
+            <label>Email address</label>
+            <input
+              type="email"
+              className="Login-form-control"
+              aria-describedby="emailHelp"
+              placeholder="Enter email"
+              name="email"
+              onChange={updateForm}
+            />
+          </div>
+          <div className="Login-form-group">
+            <label>Password</label>
+            <input
+              type="password"
+              className="Login-form-control"
+              placeholder="Password"
+              name="password"
+              onChange={updateForm}
+            />
+          </div>
+          <button type="submit" className="Login-LogButton">
+            Submit
+          </button>
+        </form>
+      </div>
+      <div className="Login-Right-Panel">
+        <img
+          src={Logo} alt="Logo"
+          className="Login-Img-log"
+        ></img>
+      </div>
     </div>
   );
 }

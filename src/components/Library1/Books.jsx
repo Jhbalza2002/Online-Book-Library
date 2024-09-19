@@ -1,7 +1,8 @@
-import React, { useState, useRef } from "react";
+import { useState, useRef } from "react";
 import { useGetBooksQuery } from "./BookSlice";
 import { Link } from "react-router-dom";
 import "./Books.css";
+import booknotfound from "../../assets/nbfound.png"
 
 export default function Books() {
   const { data: books = [], error, isLoading } = useGetBooksQuery();
@@ -31,7 +32,7 @@ export default function Books() {
   const handleScrollLeft = () => {
     if (scrollRef.current) {
       scrollRef.current.scrollBy({
-        left: -550,
+        left: -690,
         behavior: "smooth",
       });
     }
@@ -40,18 +41,18 @@ export default function Books() {
   const handleScrollRight = () => {
     if (scrollRef.current) {
       scrollRef.current.scrollBy({
-        left: 550,
+        left: 690,
         behavior: "smooth",
       });
     }
   };
 
   return (
-    <div>
+    <div className="Main-Container">
       <div className="SearchBar">
       <div className="SearchBarText">Filter by Author or Title:</div>
         <label>
-          <input
+          <input 
             className="SearchBox"
             type="text"
             value={searchTerm}
@@ -98,7 +99,7 @@ export default function Books() {
                 <h2 className="NotFoundText">No books found.</h2>
                 <img
                   className="NotFoundImg"
-                  src="https://img.freepik.com/premium-vector/mission-book-icon-flat-illustration-mission-book-vector-icon-isolated-white-background_98396-43586.jpg"
+                  src={booknotfound}
                   alt="Book Not Found"
                 />
                 <h3 className="NoFoundText2">Try looking for something else</h3>

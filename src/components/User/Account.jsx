@@ -1,5 +1,8 @@
-import React, { useEffect } from "react";
-import { useGetAccountDetailsQuery, useReturnBookMutation } from "./AccountSlice";
+import { useEffect } from "react";
+import {
+  useGetAccountDetailsQuery,
+  useReturnBookMutation,
+} from "./AccountSlice";
 import { useNavigate } from "react-router-dom";
 import "./Account.css";
 
@@ -9,7 +12,7 @@ const Account = () => {
     error,
     isLoading,
     isSuccess,
-    refetch
+    refetch,
   } = useGetAccountDetailsQuery({ count: 4 });
 
   const navigate = useNavigate();
@@ -24,7 +27,7 @@ const Account = () => {
       await returnBook(reservationId).unwrap();
       alert("Book returned successfully!");
       refetch();
-      navigate('/account');
+      navigate("/account");
     } catch (error) {
       console.error("Failed to return the book:", error);
       alert("Failed to return the book. Please try again.");
@@ -32,7 +35,8 @@ const Account = () => {
   };
 
   useEffect(() => {
-    const token = localStorage.getItem("token") || sessionStorage.getItem("Token");
+    const token =
+      localStorage.getItem("token") || sessionStorage.getItem("Token");
     if (!token) {
       navigate("/login");
     }
@@ -43,7 +47,8 @@ const Account = () => {
   }
 
   if (error) {
-    const token = localStorage.getItem("token") || sessionStorage.getItem("Token");
+    const token =
+      localStorage.getItem("token") || sessionStorage.getItem("Token");
     if (!token) {
       navigate("/login");
       return <div>Redirecting to login...</div>;
@@ -57,27 +62,40 @@ const Account = () => {
   return (
     <section className="AccountDetailsMain">
       <h2 className="AccountDetails">Account Details</h2>
-      <p className="Email"><strong>Email:</strong> {accountDetails.email ?? "N/A"}</p>
-      <p className="Fname"><strong>First name:</strong> {accountDetails.firstname ?? "N/A"}</p>
-      <p className="Lname"><strong>Last name:</strong> {accountDetails.lastname ?? "N/A"}</p>
+      <p className="Email">
+        <strong>Email:</strong> {accountDetails.email ?? "N/A"}
+      </p>
+      <p className="Fname">
+        <strong>First name:</strong> {accountDetails.firstname ?? "N/A"}
+      </p>
+      <p className="Lname">
+        <strong>Last name:</strong> {accountDetails.lastname ?? "N/A"}
+      </p>
       <h3 className="CheckBooks">Checked Out Books</h3>
       {accountDetails.books?.length > 0 ? (
-        <ul className="Ulist">
+        <div className="Containers">
           {accountDetails.books.map((book) => (
-            <li className="List" key={book.id}>
+            <div className="Books-Account" key={book.id}>
               <div className="Returnablebooks">
                 <img
                   className="ImageAccount"
                   src={book.coverimage}
                   alt={`${book.title} cover`}
                 />
-                <strong>Author:</strong> {book.title}
-                <br />
-                <button className="Return" onClick={() => handleReturnBook(book.id)}>Return Book</button>
+                <div className="BookInfo">
+                <strong className="Author">Author: {book.author} </strong>
+                <strong className="Tittle">Tittle: {book.title} </strong>
+                </div>
+                <button
+                  className="Return"
+                  onClick={() => handleReturnBook(book.id)}
+                >
+                  Return Book
+                </button>
               </div>
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       ) : (
         <p className="Nobookcheck">No books checked out</p>
       )}

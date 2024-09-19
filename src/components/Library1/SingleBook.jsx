@@ -61,15 +61,13 @@ export default function SingleBook() {
           <h4 className="SingleBookDescriptionTitle">Description:</h4>
           <p className="SingleBookDescription">{book.book.description}</p>{" "}
           <div className="SingleBookButtons">
-            <div className="CheckOutButton">
               {book.book.available && (
-                <button onClick={handleCheckout}>Checkout Book</button>
+                <button className="CheckOutButton"onClick={handleCheckout}>Checkout Book</button>
               )}
               <button className="BackButton" onClick={() => navigate("/books")}>
                 Back to Books
               </button>
             </div>
-          </div>
         </div>
       </div>
     </div>
